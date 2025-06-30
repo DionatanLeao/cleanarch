@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @Component
 public class FindCustomerByIdImpl implements FindCustomerById {
-
     @Autowired
     private CustomerRepository customerRepository;
 

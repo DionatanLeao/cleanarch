@@ -5,7 +5,6 @@ import com.devdeolho.cleanarch.core.domain.Customer;
 import com.devdeolho.cleanarch.core.usecase.FindCustomerByIdUseCase;
 
 public class FindCustomerByIdUseCaseImpl implements FindCustomerByIdUseCase {
-
     private final FindCustomerById findCustomerById;
 
     public FindCustomerByIdUseCaseImpl(FindCustomerById findCustomerById) {

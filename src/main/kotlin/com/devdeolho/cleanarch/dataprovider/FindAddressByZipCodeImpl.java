@@ -7,7 +7,6 @@ import com.devdeolho.cleanarch.dataprovider.client.mapper.AddressResponseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class FindAddressByZipCodeImpl implements FindAddressByZipCode {
-
     @Autowired
     private FindAddressByZipCodeClient findAddressByZipCodeClient;
 

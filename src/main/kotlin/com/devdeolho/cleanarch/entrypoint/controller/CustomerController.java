@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/customers")
 public class CustomerController {
-
     @Autowired
     private InsertCustomerUseCase insertCustomerUseCase;
 
