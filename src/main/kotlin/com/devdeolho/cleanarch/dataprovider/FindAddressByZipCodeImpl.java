@@ -5,9 +5,10 @@ import com.devdeolho.cleanarch.core.domain.Address;
 import com.devdeolho.cleanarch.dataprovider.client.FindAddressByZipCodeClient;
 import com.devdeolho.cleanarch.dataprovider.client.mapper.AddressResponseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FindAddressByZipCodeImpl implements FindAddressByZipCode {
-
     @Autowired
     private FindAddressByZipCodeClient findAddressByZipCodeClient;
 
