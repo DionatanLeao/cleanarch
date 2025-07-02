@@ -1,5 +1,6 @@
 package com.devdeolho.cleanarch.entrypoint.controller;
 
+import com.devdeolho.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
 import com.devdeolho.cleanarch.core.usecase.FindCustomerByIdUseCase;
 import com.devdeolho.cleanarch.core.usecase.InsertCustomerUseCase;
 import com.devdeolho.cleanarch.core.usecase.UpdateCustomerUseCase;
@@ -24,6 +25,9 @@ public class CustomerController {
     private UpdateCustomerUseCase updateCustomerUseCase;
 
     @Autowired
+    private DeleteCustomerByIdUseCase deleteCustomerByIdUseCase;
+
+    @Autowired
     private CustomerMapper customerMapper;
 
     @PostMapping
@@ -44,6 +48,12 @@ public class CustomerController {
         var customer = customerMapper.toCustomer(customerRequest);
         customer.setId(id);
         updateCustomerUseCase.update(customer, id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id) {
+        deleteCustomerByIdUseCase.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
