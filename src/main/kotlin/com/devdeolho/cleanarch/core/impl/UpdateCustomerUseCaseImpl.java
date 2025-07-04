@@ -11,9 +11,11 @@ public class UpdateCustomerUseCaseImpl implements UpdateCustomerUseCase {
     private final FindAddressByZipCode findAddressByZipCode;
     private final UpdateCustomer updateCustomer;
 
-    public UpdateCustomerUseCaseImpl(FindCustomerByIdUseCase findCustomerByIdUseCase,
-                                     FindAddressByZipCode findAddressByZipCode,
-                                     UpdateCustomer updateCustomer) {
+    public UpdateCustomerUseCaseImpl(
+        FindCustomerByIdUseCase findCustomerByIdUseCase,
+        FindAddressByZipCode findAddressByZipCode,
+        UpdateCustomer updateCustomer
+    ) {
         this.findCustomerByIdUseCase = findCustomerByIdUseCase;
         this.findAddressByZipCode = findAddressByZipCode;
         this.updateCustomer = updateCustomer;

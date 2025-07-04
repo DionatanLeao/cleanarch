@@ -10,8 +10,10 @@ public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase 
 
     private final DeleteCustomerById deleteCustomerById;
 
-    public DeleteCustomerByIdUseCaseImpl(FindCustomerByIdUseCase findCustomerByIdUseCase,
-                                         DeleteCustomerById deleteCustomerById) {
+    public DeleteCustomerByIdUseCaseImpl(
+        FindCustomerByIdUseCase findCustomerByIdUseCase,
+        DeleteCustomerById deleteCustomerById
+    ) {
         this.findCustomerByIdUseCase = findCustomerByIdUseCase;
         this.deleteCustomerById = deleteCustomerById;
     }
