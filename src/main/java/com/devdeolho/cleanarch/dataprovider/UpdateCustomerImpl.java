@@ -17,6 +17,6 @@ public class UpdateCustomerImpl implements UpdateCustomer {
 
     @Override
     public void update(Customer customer) {
-        customerRepository.save(customerEntityMapper.toCustomerEntity(customer));
+            customerRepository.save(customerEntityMapper.toCustomerEntity(customer));
     }
 }
