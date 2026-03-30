@@ -1,4 +1,4 @@
-package com.devdeolho.cleanarch.entrypoint.consumer;
+package com.devdeolho.cleanarch.config;
 
 import com.devdeolho.cleanarch.entrypoint.consumer.message.CustomerMessage;
 import org.apache.kafka.common.serialization.StringDeserializer;
