@@ -1,6 +1,7 @@
 package com.devdeolho.cleanarch.entrypoint.controller;
 
 import com.devdeolho.cleanarch.core.domain.Customer;
+import com.devdeolho.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
 import com.devdeolho.cleanarch.core.usecase.FindCustomerByIdUseCase;
 import com.devdeolho.cleanarch.core.usecase.InsertCustomerUseCase;
 import com.devdeolho.cleanarch.core.usecase.UpdateCustomerUseCase;
@@ -10,6 +11,7 @@ import com.devdeolho.cleanarch.entrypoint.controller.response.CustomerResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +34,9 @@ public class CustomerController {
     private UpdateCustomerUseCase updateCustomerUseCase;
 
     @Autowired
+    private DeleteCustomerByIdUseCase deleteCustomerByIdUseCase;
+
+    @Autowired
     private CustomerMapper customerMapper;
 
     @PostMapping
@@ -52,6 +57,12 @@ public class CustomerController {
         Customer customer = customerMapper.toCustomer(customerRequest);
         customer.setId(id);
         updateCustomerUseCase.update(customer, customerRequest.getZipCode());
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable final String id) {
+        deleteCustomerByIdUseCase.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
